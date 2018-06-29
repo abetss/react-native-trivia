@@ -1,0 +1,28 @@
+{
+  "extends": [
+    "tslint:recommended",
+    "tslint-config-prettier",
+    "tslint-clean-code"
+  ],
+  "rules": {
+    "interface-over-type-literal": false,
+    "variable-name": false,
+    "interface-name": [true, "never-prefix"],
+    "jsx-boolean-value": false,
+    "object-literal-sort-keys": false,
+    "newspaper-order": false,
+    "no-commented-out-code": true,
+    "no-console": [true, ["error", ["warn", "error"]]],
+    "ordered-imports": [
+      true,
+      {
+        "import-sources-order": "case-insensitive",
+        "named-imports-order": "case-insensitive",
+        "grouped-imports": true
+      }
+    ]
+  },
+  "linterOptions": {
+    "exclude": ["config/**/*.js", "node_modules/**/*.ts", "coverage/**/*"]
+  }
+}
