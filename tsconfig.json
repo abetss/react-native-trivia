@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "es6",
-    "baseUrl": "src",
+    "baseUrl": ".",
     "module": "es2015",
     "outDir": "build/dist",
     "sourceMap": true,
