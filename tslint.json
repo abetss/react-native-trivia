@@ -15,6 +15,7 @@
     "no-commented-out-code": true,
     "no-console": [true, ["error", ["warn", "error"]]],
     "no-shadowed-variable": false,
+    "no-unused-variable": true,
     "ordered-imports": [
       true,
       {
