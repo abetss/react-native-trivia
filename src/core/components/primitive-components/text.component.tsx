@@ -1,11 +1,7 @@
 import styled from 'styled-components/native';
 import {
-  borderColor,
-  borders,
   color,
-  flex,
   fontSize,
-  height,
   space,
   width,
   themeGet,
@@ -16,8 +12,11 @@ import {
   letterSpacing,
 } from 'styled-system';
 
+// Todo: add types
 export const Text = styled.Text`
   color: ${themeGet('colors.black.0')};
+  font-size: ${themeGet('fontSizes.3')};
+  font-weight: ${themeGet('fontWeights.3')};
   ${color};
   ${space};
   ${width};

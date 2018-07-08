@@ -15,12 +15,6 @@ export const theme = {
     tight: '-0.05em',
     mega: '0.25em',
   },
-  fonts: {
-    serif: 'athelas, georgia, times, serif',
-    eczar: '"Eczar", serif',
-    sansSerif:
-      '-apple-system, BlinkMacSystemFont, "avenir next", avenir, "helvetica neue", helvetica, ubuntu, roboto, noto, "segoe ui", arial, sans-serif',
-  },
   borders: [
     0,
     '1px solid',
@@ -33,11 +27,6 @@ export const theme = {
   radii: [0, 2, 4, 16, 9999, '100%'],
   width: [16, 32, 64, 128, 256],
   heights: [16, 32, 64, 128, 256],
-  maxWidths: [16, 32, 64, 128, 256, 512, 768, 1024, 1536],
-  colors: {
-    black: [colors.black, colors['dark-gray'], colors['mid-gray']],
-    white: [colors.white, colors['light-gray'], colors['moon-gray']],
-    transparent: 'transparent',
-    red: [colors['dark-red'], colors.red, colors['light-red']],
-  },
+  maxWidths: [16, 32, 64, 128, 256, 512],
+  colors,
 };

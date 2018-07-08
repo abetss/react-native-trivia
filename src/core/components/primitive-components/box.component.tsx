@@ -29,39 +29,37 @@ import {
   left,
 } from 'styled-system';
 
+// Todo: add types
 export const Box = styled.View`
   ${color};
   ${space};
   ${width};
-  /* typography */
-  ${fontSize};
-  ${textAlign};',
   /* layout */
-  ${maxWidth};',
-  ${minWidth};',
-  ${height};',
-  ${maxHeight};',
-  ${minHeight};',
+  ${maxWidth};
+  ${minWidth};
+  ${height};
+  ${maxHeight};
+  ${minHeight};
   /* borders */
-  ${borders};',
-  ${borderColor};',
-  ${borderRadius};',
-   /* flexbox */
+  ${borders};
+  ${borderColor};
+  ${borderRadius};
+  /* flexbox */
   ${flex};
-  ${alignItems};',
-  ${alignContent};',
-  ${flexDirection};',
-  ${flexBasis};',
-  ${justifySelf};',
-  ${alignSelf};',
+  ${alignItems};
+  ${alignContent};
+  ${flexDirection};
+  ${flexBasis};
+  ${justifySelf};
+  ${alignSelf};
   ${flexWrap};
   /* position */
-  ${position};',
-  ${zIndex};',
-  ${top};',
-  ${right};',
-  ${bottom};',
-  ${left};',
+  ${position};
+  ${zIndex};
+  ${top};
+  ${right};
+  ${bottom};
+  ${left};
 `;
 
 Box.displayName = 'Box';

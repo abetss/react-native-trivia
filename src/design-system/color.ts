@@ -1,4 +1,6 @@
-export const colors = {
+import { color } from 'styled-system';
+
+const colorSpectrum = {
   black: '#000',
   'near-black': '#111',
   'dark-gray': '#333',
@@ -64,4 +66,23 @@ export const colors = {
   'washed-green': '#e8fdf5',
   'washed-yellow': '#fffceb',
   'washed-red': '#ffdfdf',
+};
+
+export const colors = {
+  black: [
+    colorSpectrum.black,
+    colorSpectrum['dark-gray'],
+    colorSpectrum['mid-gray'],
+  ],
+  white: [
+    colorSpectrum.white,
+    colorSpectrum['light-gray'],
+    colorSpectrum['moon-gray'],
+  ],
+  transparent: 'transparent',
+  red: [
+    colorSpectrum['dark-red'],
+    colorSpectrum.red,
+    colorSpectrum['light-red'],
+  ],
 };
