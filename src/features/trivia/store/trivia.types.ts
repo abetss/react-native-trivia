@@ -9,11 +9,15 @@ export enum TriviaActionType {
 
 export interface Question {
   readonly category: string;
-  // and more
+  readonly type: string;
+  readonly difficulty: string;
+  readonly question: string;
+  readonly correct_answer: boolean; // and more
 }
 
 export type TriviaState = {
   readonly questions: ReadonlyArray<Question>;
+  readonly isLoading: boolean;
 };
 
 export type FetchQuestionsStart = Action<

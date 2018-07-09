@@ -1,14 +1,11 @@
+import { fetchQuestionsService } from './../services/index';
 import { combineEpics, Epic, ofType } from 'redux-observable';
-import { mapTo } from 'rxjs/operators';
+import { mapTo, switchMap, map, flatMap, catchError } from 'rxjs/operators';
+import { of } from 'rxjs';
 
-import { fetchQuestionsSuccess } from './trivia.actions';
+import { fetchQuestionsSuccess, fetchQuestionsError } from './trivia.actions';
 
-import {
-  TriviaEpicAction,
-  TriviaState,
-  TriviaAction,
-  TriviaActionType,
-} from './trivia.types';
+import { TriviaState, TriviaAction, TriviaActionType } from './trivia.types';
 
 const fetchQuestionsEpic: Epic<
   TriviaAction,
@@ -17,7 +14,11 @@ const fetchQuestionsEpic: Epic<
 > = action$ =>
   action$.pipe(
     ofType(TriviaActionType.FETCH_QUESTIONS_START),
-    mapTo(fetchQuestionsSuccess([])),
+    switchMap(() =>
+      fetchQuestionsService()
+        .then(questions => fetchQuestionsSuccess(questions))
+        .catch(error => fetchQuestionsError(error)),
+    ),
   );
 
 export const triviaEpics = combineEpics(fetchQuestionsEpic);

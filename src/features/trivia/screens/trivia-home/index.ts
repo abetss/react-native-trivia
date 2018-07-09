@@ -1,1 +1,1 @@
-export * from './trivia-home.component';
+export * from './trivia-home.screen';
