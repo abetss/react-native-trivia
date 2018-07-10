@@ -3,11 +3,7 @@ import { StatusBar } from 'react-native';
 import { Constants } from 'expo';
 import { Box } from '../primitive-components';
 
-interface HeaderProps {
-  children?: React.ReactNode;
-}
-
-export const Header: React.SFC<HeaderProps> = props => (
+export const Header: React.SFC = props => (
   <React.Fragment>
     <StatusBar barStyle="light-content" />
     <Box

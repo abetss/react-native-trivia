@@ -85,4 +85,11 @@ export const colors = {
     colorSpectrum.red,
     colorSpectrum['light-red'],
   ],
+  green: [
+    colorSpectrum['dark-green'],
+    colorSpectrum.green,
+    colorSpectrum['light-green'],
+    ,
+  ],
+  orange: ['#ff6300'],
 };

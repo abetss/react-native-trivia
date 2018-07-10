@@ -10,7 +10,7 @@ export function createAction<Type extends string, Payload>(
   type: Type,
   payload?: any,
 ) {
-  return payload ? { type, payload } : { type };
+  return payload != null ? { type, payload } : { type };
 }
 
 export const mapDispatchers = (dispatchers: ActionCreatorsMapObject) => (

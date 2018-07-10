@@ -1,14 +1,15 @@
 import { TriviaNavigationRoute } from './trivia.navigation.constants';
 import { createStackNavigator } from 'react-navigation';
-import { TriviaHomeScreen, TriviaQuizComponent } from '../screens';
+import { TriviaHomeScreen, TriviaQuizScreen } from '../screens';
 
 export const TriviaNavigation = createStackNavigator(
   {
     [TriviaNavigationRoute.Home]: TriviaHomeScreen,
-    [TriviaNavigationRoute.Quiz]: TriviaQuizComponent,
+    [TriviaNavigationRoute.Quiz]: TriviaQuizScreen,
+    [TriviaNavigationRoute.Summary]: TriviaHomeScreen,
   },
   {
     headerMode: 'none',
-    initialRouteName: TriviaNavigationRoute.Quiz,
+    initialRouteName: TriviaNavigationRoute.Home,
   },
 );

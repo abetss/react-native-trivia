@@ -14,7 +14,9 @@
     "importHelpers": true,
     "strict": true,
     "noImplicitReturns": true,
+    "noUnusedLocals": true,
     "plugins": [{ "name": "typescript-styled-plugin" }],
     "pretty": true
-  }
+  },
+  "exclude": ["node_modules"]
 }

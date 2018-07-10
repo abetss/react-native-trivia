@@ -5,6 +5,7 @@ export enum TriviaActionType {
   FETCH_QUESTIONS_ERROR = 'FETCH_QUESTIONS_ERROR',
   FETCH_QUESTIONS_START = 'FETCH_QUESTIONS_START',
   FETCH_QUESTIONS_SUCCESS = 'FETCH_QUESTIONS_SUCCESS',
+  ANSWER_QUESTION = 'ANSWER_QUESTION',
 }
 
 export interface Question {
@@ -15,15 +16,25 @@ export interface Question {
   readonly correct_answer: boolean; // and more
 }
 
+export interface Answer {
+  answer: boolean;
+}
+
+export interface Quiz {
+  readonly answers: Answer[];
+  readonly currentQuestionIndex: number;
+}
+
 export type TriviaState = {
-  readonly questions: ReadonlyArray<Question>;
+  readonly questions: Question[];
+  readonly quiz: Quiz;
   readonly isLoading: boolean;
 };
 
-export type FetchQuestionsStart = Action<
+export type FetchQuestionsStartAction = Action<
   TriviaActionType.FETCH_QUESTIONS_START
 >;
-export type FetchQuestionsError = Action<
+export type FetchQuestionsErrorAction = Action<
   TriviaActionType.FETCH_QUESTIONS_ERROR
 >;
 export type FetchQuestionsSuccessAction = PayloadAction<
@@ -31,11 +42,18 @@ export type FetchQuestionsSuccessAction = PayloadAction<
   Question[]
 >;
 
-export type TriviaAction =
-  | FetchQuestionsStart
-  | FetchQuestionsSuccessAction
-  | FetchQuestionsError;
+export type AnswerQuestionAction = PayloadAction<
+  TriviaActionType.ANSWER_QUESTION,
+  boolean
+>;
 
-export type TriviaEpicAction = FetchQuestionsStart;
+export type TriviaAction =
+  | FetchQuestionsStartAction
+  | FetchQuestionsSuccessAction
+  | FetchQuestionsErrorAction
+  | AnswerQuestionAction;
+
+// Todo: remove these two
+export type TriviaEpicAction = FetchQuestionsStartAction;
 
 export type TriviaReducerAction = Diff<TriviaAction, TriviaEpicAction>;
