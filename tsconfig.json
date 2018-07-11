@@ -14,6 +14,8 @@
     "importHelpers": true,
     "strict": true,
     "noImplicitReturns": true,
+    "forceConsistentCasingInFileNames": true,
+    "strictNullChecks": true,
     "noUnusedLocals": true,
     "plugins": [{ "name": "typescript-styled-plugin" }],
     "pretty": true

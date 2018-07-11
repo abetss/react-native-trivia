@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { compose, withHandlers, lifecycle } from 'recompose';
+import { compose, withHandlers } from 'recompose';
 import { mapDispatchers } from 'src/core/utils';
 
 import { TriviaQuizComponent, TriviaQuizProps } from './trivia.quiz.component';

@@ -1,5 +1,4 @@
 import { Action, PayloadAction } from 'src/core/utils/store';
-import { Diff } from 'src/core/utils/typescript';
 
 export enum TriviaActionType {
   FETCH_QUESTIONS_ERROR = 'FETCH_QUESTIONS_ERROR',
@@ -51,8 +50,3 @@ export type TriviaAction =
   | FetchQuestionsErrorAction
   | AnswerQuestionAction
   | ResetQuizAction;
-
-// Todo: remove these two
-export type TriviaEpicAction = FetchQuestionsStartAction;
-
-export type TriviaReducerAction = Diff<TriviaAction, TriviaEpicAction>;

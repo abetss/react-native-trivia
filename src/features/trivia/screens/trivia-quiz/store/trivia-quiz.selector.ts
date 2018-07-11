@@ -40,7 +40,7 @@ const selectCurrentQuestionNumber = createSelector<State, number, number>(
   add(1),
 );
 
-const selectCurrentQuestionQuestion = createSelector<State, Question, string>(
+const selectCurrentQuestionTitle = createSelector<State, Question, string>(
   selectCurrentQuestion,
   compose(
     decode,
@@ -58,7 +58,7 @@ export const triviaQuizConnector = createStructuredSelector<
   TriviaQuizConnector
 >({
   currentQuestionCategory: selectCurrentQuestionCategory,
-  currentQuestionQuestion: selectCurrentQuestionQuestion,
+  currentQuestionTitle: selectCurrentQuestionTitle,
   currentQuestionNumber: selectCurrentQuestionNumber,
   currentQuestionIndex: selectCurrentQuestionIndex,
   isLoading: selectIsLoading,

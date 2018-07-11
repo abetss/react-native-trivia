@@ -10,7 +10,6 @@ import {
   letterSpacing,
 } from 'styled-system';
 
-// Todo: add types
 export const Text = styled.Text`
   color: ${themeGet('colors.black.0')};
   font-size: ${themeGet('fontSizes.3')};

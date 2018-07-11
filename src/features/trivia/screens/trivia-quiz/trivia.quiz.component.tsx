@@ -26,7 +26,7 @@ export interface TriviaQuizProps
 export const TriviaQuizComponent: React.SFC<TriviaQuizProps> = ({
   isLoading,
   currentQuestionCategory,
-  currentQuestionQuestion,
+  currentQuestionTitle,
   currentQuestionNumber,
   handleAnswerClick,
 }) => (
@@ -46,7 +46,7 @@ export const TriviaQuizComponent: React.SFC<TriviaQuizProps> = ({
         {!isLoading && (
           <React.Fragment>
             <Card height={260} width={320}>
-              <Text textAlign="center">{currentQuestionQuestion}</Text>
+              <Text textAlign="center">{currentQuestionTitle}</Text>
             </Card>
             <Box pt={3}>
               <Text>

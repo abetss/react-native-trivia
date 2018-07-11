@@ -1,2 +1,2 @@
-export * from './trivia-summary.selectors';
+export * from './trivia-summary.selector';
 export * from './trivia-summary.types';

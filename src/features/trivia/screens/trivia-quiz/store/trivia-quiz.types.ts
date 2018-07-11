@@ -1,5 +1,5 @@
 export interface TriviaQuizConnector {
-  currentQuestionQuestion: string;
+  currentQuestionTitle: string;
   currentQuestionCategory: string;
   currentQuestionNumber: number;
   currentQuestionIndex: number;

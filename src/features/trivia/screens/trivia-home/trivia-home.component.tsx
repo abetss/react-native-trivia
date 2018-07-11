@@ -23,7 +23,7 @@ export const TriviaHomeComponent: React.SFC<TriviaHomeProps> = ({
       </Text>
     </Header>
     <Box px={2} flex={1} alignItems="center" justifyContent="space-around">
-      <Text textAlign="center">
+      <Text textAlign="center" width={4}>
         You will be presented with 10 True and False questions.
       </Text>
       <Text textAlign="center">Can you score 100%</Text>

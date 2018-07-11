@@ -1,7 +1,6 @@
 import { fetchQuestionsService } from './../services/index';
 import { combineEpics, Epic, ofType } from 'redux-observable';
-import { mapTo, switchMap, map, flatMap, catchError } from 'rxjs/operators';
-import { of } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
 
 import { fetchQuestionsSuccess, fetchQuestionsError } from './trivia.actions';
 

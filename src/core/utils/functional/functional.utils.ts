@@ -8,7 +8,6 @@ export const makeSet = <O>(object: O) => <K extends keyof O>(
   val: O[K],
 ) => assoc(key, val, object);
 
-// Todo: make this generic
 export const makeOverwrite = <O>(initialObject: O) => (
   updateObject: object,
 ): O => mergeDeepRight(initialObject, updateObject);

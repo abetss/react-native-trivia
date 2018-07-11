@@ -27,7 +27,6 @@ import {
   left,
 } from 'styled-system';
 
-// Todo: add types
 export const Box = styled.View`
   ${color};
   ${space};
