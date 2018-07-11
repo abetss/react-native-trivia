@@ -12,7 +12,13 @@ export const TriviaHomeComponent: React.SFC<TriviaHomeProps> = ({
 }) => (
   <Container>
     <Header>
-      <Text fontSize={4} fontWeight={6} textAlign="center" color="white.0">
+      <Text
+        fontSize={4}
+        fontWeight="bold"
+        width={200}
+        textAlign="center"
+        color="white.0"
+      >
         Welcome to the Trivia Challenge
       </Text>
     </Header>

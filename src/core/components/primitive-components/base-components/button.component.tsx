@@ -4,7 +4,8 @@ import {
   ButtonProps as ElementsButtonProps,
 } from 'react-native-elements';
 
-import { StyleSpaceProps, getThemeColor } from 'src/design-system';
+import { StyleSpaceProps, themeColorGet } from 'src/design-system';
+import { themeGet } from 'styled-system';
 
 interface ButtonProps extends ElementsButtonProps, StyleSpaceProps {
   w?: number;
@@ -13,7 +14,7 @@ interface ButtonProps extends ElementsButtonProps, StyleSpaceProps {
 
 export const Button = styled(ElementsButton).attrs<ButtonProps>({
   buttonStyle: (props: ButtonProps) => ({
-    backgroundColor: getThemeColor(props, 'bg', 'red.1'),
+    backgroundColor: themeColorGet(props, 'bg', 'red.1'),
     width: props.w || 300,
     height: 45,
     borderColor: 'transparent',
@@ -29,5 +30,9 @@ export const Button = styled(ElementsButton).attrs<ButtonProps>({
     paddingBottom: props.pb || props.py,
     paddingLeft: props.pl || props.px,
     paddingRight: props.pr || props.px,
+  }),
+  textStyle: (props: ButtonProps) => ({
+    fontSize: themeGet('fontSizes.3')(props),
+    fontWeight: 'bold',
   }),
 })``;

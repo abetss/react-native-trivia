@@ -1,10 +1,9 @@
+import { theme } from './theme';
 import { themeGet } from 'styled-system';
-import { space } from './space';
-import { width } from './width';
 
 const fallbackColor = '#ff4136';
 
-export const getThemeColor = (
+export const themeColorGet = (
   props: any,
   property: 'color' | 'bg',
   defaultColorCode: string,
@@ -17,8 +16,11 @@ export const getThemeColor = (
     : defaultColor;
 };
 
-export const getThemeSpacing = (index: number): number =>
-  space[index] ? space[index] : index;
+export const getThemeSpace = (index: number): number =>
+  theme.space[index] ? theme.space[index] : index;
 
 export const getThemeWidth = (index: number): number =>
-  width[index] ? width[index] : index;
+  theme.width[index] ? theme.width[index] : index;
+
+export const getThemeFontSize = (index: number): number =>
+  theme.fontSizes[index] ? theme.fontSizes[index] : index;

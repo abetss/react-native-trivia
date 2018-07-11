@@ -9,6 +9,7 @@ import {
   Box,
   Button,
 } from 'src/core/components';
+import { getThemeFontSize } from 'src/design-system';
 
 import { TriviaQuizConnector } from './store';
 import { QUIZ_TOTAL_QUESTIONS } from '../../store';
@@ -35,7 +36,12 @@ export const TriviaQuizComponent: React.SFC<TriviaQuizProps> = ({
     {!isLoading && (
       <React.Fragment>
         <Header>
-          <Text fontSize={4} fontWeight={6} textAlign="center" color="white.0">
+          <Text
+            fontSize={4}
+            fontWeight="bold"
+            textAlign="center"
+            color="white.0"
+          >
             {currentQuestionCategory}
           </Text>
         </Header>
@@ -52,16 +58,16 @@ export const TriviaQuizComponent: React.SFC<TriviaQuizProps> = ({
             <Button
               title="In Correct"
               onPress={handleAnswerClick(false)}
-              icon={{ name: 'close' }}
+              icon={{ name: 'close', size: getThemeFontSize(4) }}
               bg="orange.0"
-              w={120}
+              w={150}
             />
             <Button
               title="Correct"
               onPress={handleAnswerClick(true)}
-              icon={{ name: 'check' }}
+              icon={{ name: 'check', size: getThemeFontSize(4) }}
               bg="green.0"
-              w={120}
+              w={150}
             />
           </Box>
         </Box>

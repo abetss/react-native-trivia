@@ -5,10 +5,8 @@ import {
   space,
   width,
   themeGet,
-  fontFamily,
   textAlign,
   lineHeight,
-  fontWeight,
   letterSpacing,
 } from 'styled-system';
 
@@ -16,16 +14,17 @@ import {
 export const Text = styled.Text`
   color: ${themeGet('colors.black.0')};
   font-size: ${themeGet('fontSizes.3')};
-  font-weight: ${themeGet('fontWeights.3')};
+  font-family: ${props =>
+    props.fontWeight === 'bold'
+      ? themeGet('fontFamily.bold')
+      : themeGet('fontFamily.regular')};
   ${color};
   ${space};
   ${width};
   /* typography */
   ${fontSize};
-  ${fontFamily};
   ${textAlign};
   ${lineHeight};
-  ${fontWeight};
   ${letterSpacing};
 `;
 
