@@ -6,22 +6,19 @@ export enum TriviaActionType {
   FETCH_QUESTIONS_START = 'FETCH_QUESTIONS_START',
   FETCH_QUESTIONS_SUCCESS = 'FETCH_QUESTIONS_SUCCESS',
   ANSWER_QUESTION = 'ANSWER_QUESTION',
+  RESET_QUIZ = 'RESET_QUIZ',
 }
 
 export interface Question {
   readonly category: string;
   readonly type: string;
   readonly difficulty: string;
-  readonly question: string;
+  readonly title: string;
   readonly correct_answer: boolean; // and more
 }
 
-export interface Answer {
-  answer: boolean;
-}
-
 export interface Quiz {
-  readonly answers: Answer[];
+  readonly answers: boolean[];
   readonly currentQuestionIndex: number;
 }
 
@@ -46,12 +43,14 @@ export type AnswerQuestionAction = PayloadAction<
   TriviaActionType.ANSWER_QUESTION,
   boolean
 >;
+export type ResetQuizAction = Action<TriviaActionType.RESET_QUIZ>;
 
 export type TriviaAction =
   | FetchQuestionsStartAction
   | FetchQuestionsSuccessAction
   | FetchQuestionsErrorAction
-  | AnswerQuestionAction;
+  | AnswerQuestionAction
+  | ResetQuizAction;
 
 // Todo: remove these two
 export type TriviaEpicAction = FetchQuestionsStartAction;

@@ -1,5 +1,3 @@
-import { color } from 'styled-system';
-
 const colorSpectrum = {
   black: '#000',
   'near-black': '#111',

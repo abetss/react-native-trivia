@@ -2,19 +2,13 @@ import { connect } from 'react-redux';
 import { compose, withHandlers, lifecycle } from 'recompose';
 import { mapDispatchers } from 'src/core/utils';
 
-import { TriviaQuizComponent } from './trivia.quiz.component';
+import { TriviaQuizComponent, TriviaQuizProps } from './trivia.quiz.component';
 import { triviaQuizConnector } from './store';
-import { TriviaQuizProps } from './trivia.quiz.types';
 
-import {
-  fetchQuestions,
-  answerQuestion,
-  isLastQuizQuestion,
-} from '../../store';
+import { answerQuestion, isLastQuizQuestion } from '../../store';
 import { TriviaNavigationRoute } from '../../navigation';
 
 const dispatchers = mapDispatchers({
-  fetchQuestions,
   answerQuestion,
 });
 

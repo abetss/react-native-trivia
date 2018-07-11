@@ -12,7 +12,6 @@ export const Header: React.SFC = props => (
       pt={Constants.statusBarHeight}
       pb={3}
       px={2}
-      alignSelf="stretch"
       alignItems="center"
       justifyContent="flex-end"
       {...props}

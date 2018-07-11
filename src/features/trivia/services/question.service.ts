@@ -7,8 +7,8 @@ const toQuestion = (question: any): Question => ({
   category: question.category,
   type: question.type,
   difficulty: question.difficulty,
-  question: question.question,
-  correct_answer: question.type === 'True' ? true : false,
+  title: question.question,
+  correct_answer: question.correct_answer === 'True' ? true : false,
 });
 
 export const fetchQuestionsService = (): Promise<Question[]> => {

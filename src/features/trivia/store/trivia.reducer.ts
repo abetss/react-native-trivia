@@ -2,15 +2,9 @@ import {
   makeSet,
   makeOverwrite,
 } from './../../../core/utils/functional/functional.utils';
-import { AnyAction, Reducer } from 'redux';
-import { set } from 'src/core/utils';
+import { Reducer } from 'redux';
 
-import {
-  Question,
-  TriviaActionType,
-  TriviaAction,
-  TriviaState,
-} from './trivia.types';
+import { TriviaActionType, TriviaAction, TriviaState } from './trivia.types';
 import { isLastQuizQuestion } from './trivia.utils';
 
 const initialState: TriviaState = {
@@ -48,6 +42,8 @@ export const triviaReducer: Reducer<TriviaState, TriviaAction> = (
         state.quiz.currentQuestionIndex,
       );
       return overwriteState({ quiz: { answers, currentQuestionIndex } });
+    case TriviaActionType.RESET_QUIZ:
+      return overwriteState(initialState);
     default:
       return state;
   }

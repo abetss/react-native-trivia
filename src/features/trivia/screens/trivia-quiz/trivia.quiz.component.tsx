@@ -11,6 +11,7 @@ import {
 } from 'src/core/components';
 
 import { TriviaQuizConnector } from './store';
+import { QUIZ_TOTAL_QUESTIONS } from '../../store';
 
 export interface TriviaQuizProps
   extends NavigationScreenProps,
@@ -25,7 +26,6 @@ export const TriviaQuizComponent: React.SFC<TriviaQuizProps> = ({
   currentQuestionCategory,
   currentQuestionQuestion,
   currentQuestionNumber,
-  totalNumberOfQuestion,
   handleAnswerClick,
 }) => (
   <Container>
@@ -40,12 +40,12 @@ export const TriviaQuizComponent: React.SFC<TriviaQuizProps> = ({
           </Text>
         </Header>
         <Box px={2} flex={1} alignItems="center" pt={5}>
-          <Card>
+          <Card height={260} width={320}>
             <Text textAlign="center">{currentQuestionQuestion}</Text>
           </Card>
           <Box pt={3}>
             <Text>
-              {currentQuestionNumber} of {totalNumberOfQuestion}
+              {currentQuestionNumber} of {QUIZ_TOTAL_QUESTIONS}
             </Text>
           </Box>
           <Box flexDirection="row" pt={5}>

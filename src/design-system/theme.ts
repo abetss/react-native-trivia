@@ -1,7 +1,10 @@
+import { space } from './space';
 import { colors } from './color';
+import { width } from './width';
+
 export const theme = {
   breakpoints: [32, 48, 64],
-  space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
+  space,
   fontSizes: [12, 14, 16, 20, 24, 36, 48, 80, 96],
   fontWeights: [100, 200, 300, 400, 500, 600, 700, 800, 900],
   lineHeights: {
@@ -25,7 +28,7 @@ export const theme = {
     '32px solid',
   ],
   radii: [0, 2, 4, 8, 16, 32, 9999, '100%'],
-  width: [16, 32, 64, 128, 256],
+  width,
   heights: [16, 32, 64, 128, 256],
   maxWidths: [16, 32, 64, 128, 256, 512],
   colors,

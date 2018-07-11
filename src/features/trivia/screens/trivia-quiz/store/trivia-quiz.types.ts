@@ -3,6 +3,5 @@ export interface TriviaQuizConnector {
   currentQuestionCategory: string;
   currentQuestionNumber: number;
   currentQuestionIndex: number;
-  totalNumberOfQuestion: number;
   isLoading: boolean;
 }

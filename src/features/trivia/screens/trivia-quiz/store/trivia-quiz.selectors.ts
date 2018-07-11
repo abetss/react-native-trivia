@@ -1,29 +1,21 @@
-import { State } from 'src/app/store/app.types';
-import {
-  createSelector,
-  createStructuredSelector,
-  Selector,
-  OutputSelector,
-} from 'reselect';
+import { createSelector, createStructuredSelector, Selector } from 'reselect';
 import { add, compose } from 'ramda';
 import { decode } from 'he';
 
-import { TriviaQuizConnector } from './trivia-quiz.types';
-import { QUIZ_TOTAL_QUESTIONS } from '../../../store';
+import { State } from 'src/app';
 
-import { Question } from './../../../store/trivia.types';
+import { TriviaQuizConnector } from './trivia-quiz.types';
+
+import { selectQuestions, Question } from '../../../store';
 
 const selectCurrentQuestionIndex: Selector<State, number> = state =>
   state.trivia.quiz.currentQuestionIndex;
-
-const selectQuestions: Selector<State, Question[]> = state =>
-  state.trivia.questions;
 
 const selectIsLoading: Selector<State, boolean> = state =>
   state.trivia.isLoading;
 
 const EmptyQuestion: Question = {
-  question: '',
+  title: '',
   category: '',
   correct_answer: false,
   difficulty: '',
@@ -52,7 +44,7 @@ const selectCurrentQuestionQuestion = createSelector<State, Question, string>(
   selectCurrentQuestion,
   compose(
     decode,
-    (question: Question): string => question.question,
+    (question: Question): string => question.title,
   ),
 );
 
@@ -70,5 +62,4 @@ export const triviaQuizConnector = createStructuredSelector<
   currentQuestionNumber: selectCurrentQuestionNumber,
   currentQuestionIndex: selectCurrentQuestionIndex,
   isLoading: selectIsLoading,
-  totalNumberOfQuestion: () => QUIZ_TOTAL_QUESTIONS,
 });

@@ -7,6 +7,7 @@ import {
   FetchQuestionsStartAction,
   FetchQuestionsErrorAction,
   AnswerQuestionAction,
+  ResetQuizAction,
 } from './trivia.types';
 
 export const fetchQuestions = (): FetchQuestionsStartAction =>
@@ -22,3 +23,6 @@ export const fetchQuestionsError = (error: any): FetchQuestionsErrorAction =>
 
 export const answerQuestion = (answer: boolean): AnswerQuestionAction =>
   createAction(TriviaActionType.ANSWER_QUESTION, answer);
+
+export const resetQuiz = (): ResetQuizAction =>
+  createAction(TriviaActionType.RESET_QUIZ);
